@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__.'/../includes/zendloader.inc';
+include_once __DIR__.'/db_include.inc';
 require_once __DIR__.'/../Tables/Blog.php';
 require_once __DIR__.'/../Tables/BlogGateway.php';
 /**
@@ -8,17 +8,8 @@ require_once __DIR__.'/../Tables/BlogGateway.php';
 * @since Oct 16, 2011
 */
 
-$dbAdapter = new Zend_Db_Adapter_Pdo_Pgsql(array(
-    'host'     => '127.0.0.1',
-    'username' => 'taufek',
-    'password' => 'password',
-    'dbname'   => 'myblog'
-));
-
 use Tables\Blog;
 use Tables\BlogGateway;
-
-Zend_Db_Table::setDefaultAdapter($dbAdapter);
 
 $blogGateway = new BlogGateway();
 $blog = $blogGateway->createRow();
