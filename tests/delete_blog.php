@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__.'/db_include.inc';
 require_once __DIR__.'/../Tables/Blog.php';
-require_once __DIR__.'/../Tables/BlogGateway.php';
+require_once __DIR__.'/../Tables/BlogGatewayImpl.php';
 /**
 * 
 * @author dhydrated
@@ -11,5 +11,5 @@ require_once __DIR__.'/../Tables/BlogGateway.php';
 use Tables\Blog;
 use Tables\BlogGateway;
 
-$blogGateway = new BlogGateway();
+$blogGateway = new BlogGatewayImpl();
 $blogGateway->delete(array("id=1"));

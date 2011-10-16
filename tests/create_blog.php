@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__.'/db_include.inc';
 require_once __DIR__.'/../Tables/Blog.php';
-require_once __DIR__.'/../Tables/BlogGateway.php';
+require_once __DIR__.'/../Tables/BlogGatewayImpl.php';
 /**
 * 
 * @author dhydrated
@@ -9,12 +9,10 @@ require_once __DIR__.'/../Tables/BlogGateway.php';
 */
 
 use Tables\Blog;
-use Tables\BlogGateway;
+use Tables\BlogGatewayImpl;
 
-$blogGateway = new BlogGateway();
-$blog = $blogGateway->createRow();
-//var_dump($blog);
-// $blog = new Blog();
+$blogGateway = new BlogGatewayImpl();
+$blog = $blogGateway->createNew();
 $blog->setTitle('Foo Blog');
 $blog->setEmail('foo@baz.com');
 $blog->setCreated(date('Y-m-d H:i:s'));
@@ -22,13 +20,4 @@ $blog->setCreated(date('Y-m-d H:i:s'));
 echo (get_class($blog)." \n");
 var_dump($blog);
 echo "\n";
-$blog->save();
-
-/* $blog = new Blog();
-
-$blog->setId(1);
-$blog->setTitle('Foo Blog');
-$blog->setEmail('foo@baz.com');
-$blog->setCreated(mktime());
-
-var_dump($blog); */
+$blogGateway->save($blog);
