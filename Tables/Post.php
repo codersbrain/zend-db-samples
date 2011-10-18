@@ -1,13 +1,11 @@
 <?php
 namespace Tables;
-require_once __DIR__.'/BaseModel.php';
 /**
 * 
 * @author dhydrated
 * @since Oct 16, 2011
 */
-class Blog extends BaseModel {
-	
+class Post extends BaseModel {
 	
 	public function setId($id){
 		$this->id = $id;
@@ -25,12 +23,12 @@ class Blog extends BaseModel {
 		$this->title = $title;
 	}
 	
-	public function setEmail($email){
-		$this->email = $email;
+	public function setBlogId($blog_id){
+		$this->blog_id = $blog_id;
 	}
 	
-	public function getEmail(){
-		return $this->email;		
+	public function getBlogId(){
+		return $this->blog_id;		
 	}	
 	
 	public function setCreated($created){

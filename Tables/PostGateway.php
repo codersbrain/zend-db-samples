@@ -1,13 +1,11 @@
 <?php
 namespace Tables;
+require_once __DIR__.'/DbGateway.php';
 /**
 * 
 * @author dhydrated
 * @since Oct 16, 2011
 */
-class PostGateway extends Zend_Db_Table_Abstract
-{
-	protected $_name = 'posts';
-    protected $_primary = 'id';
+interface PostGateway extends DbGateway {
 	
 }

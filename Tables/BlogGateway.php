@@ -1,18 +1,11 @@
 <?php
 namespace Tables;
-require_once __DIR__.'/Blog.php';
+require_once __DIR__.'/DbGateway.php';
 /**
 * 
 * @author dhydrated
 * @since Oct 16, 2011
 */
-interface BlogGateway {
+interface BlogGateway extends DbGateway{
 	
-	public function createNew();
-	
-	public function save(Blog $blog);
-	
-	public function findById($id);
-	
-	public function remove($id);
 }

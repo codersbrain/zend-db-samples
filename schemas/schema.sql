@@ -40,6 +40,17 @@ CREATE TABLE posts
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE posts OWNER TO postgres;
+ALTER TABLE posts OWNER TO taufek;
 
+
+
+-- DROP SEQUENCE posts_id_seq;
+
+CREATE SEQUENCE posts_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 13
+  CACHE 1;
+ALTER TABLE posts_id_seq OWNER TO taufek;
 
