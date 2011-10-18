@@ -20,7 +20,7 @@ class BlogGatewayImpl extends \Zend_Db_Table_Abstract implements BlogGateway
     
     public function save(Blog $blog){
     	
-    	return $blog->save();
+		return $this->insert($blog->toArray());
     }
     
     public function findById($id){
